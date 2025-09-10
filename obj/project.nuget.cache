@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "RDhzVs1Yg5k=",
+  "success": true,
+  "projectFilePath": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/ST10077855_IssuesReportingApp/IssuesReportingApp.csproj",
+  "expectedPackageFiles": [
+    "/Users/mahefanyavo/.nuget/packages/microsoft.netcore.app.ref/8.0.15/microsoft.netcore.app.ref.8.0.15.nupkg.sha512",
+    "/Users/mahefanyavo/.nuget/packages/microsoft.windowsdesktop.app.ref/8.0.15/microsoft.windowsdesktop.app.ref.8.0.15.nupkg.sha512",
+    "/Users/mahefanyavo/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.15/microsoft.aspnetcore.app.ref.8.0.15.nupkg.sha512",
+    "/Users/mahefanyavo/.nuget/packages/microsoft.netcore.app.host.osx-x64/8.0.15/microsoft.netcore.app.host.osx-x64.8.0.15.nupkg.sha512"
+  ],
+  "logs": []
+}
