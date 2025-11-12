@@ -42,6 +42,10 @@
   - `Track` — focuses the page on that request and shows dependency insights.
   - `Copy ID` — copies the identifier to clipboard.
 
+UI notes:
+- Default MVC route (`/ServiceRequests`) renders the MVC view, which shows `All Requests`. The `Next to Process` and `Alphabetical by Title` lists are provided in the Razor Pages variant (`Pages/ServiceRequests/Index.cshtml`) and are not mapped by default in the current routing configuration.
+- In the MVC view, the table shows the `Created` timestamp. In the Razor Pages view, the table shows `Updated` when available, otherwise `Created`.
+
 ## Service Request Status — Data Structures and Efficiency
 
 This feature is powered by several data structures to keep interactions fast and informative even as data grows. Below are the structures, their roles, and examples.
@@ -103,6 +107,9 @@ This feature is powered by several data structures to keep interactions fast and
 - Efficiency: Prefix queries in `O(length(prefix) + k)` where `k` is suggestions returned.
 - Example:
   - UI: Type `Street`, see suggested titles and identifiers to auto-complete.
+
+Clarification:
+- The Service Requests search input does not consult the trie; its suggestions are sourced from the currently loaded items via the HTML `datalist`. The trie is leveraged by the `RecommendationEngine` for event-related suggestions elsewhere in the app.
 
 ## Project Structure
 - `IssuesReportingApp.Core/Models` — Domain models like `ServiceRequest` and `Issue`.
