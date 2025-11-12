@@ -1,0 +1,12 @@
+/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingApp.Core/bin/Debug/net8.0/IssuesReportingApp.Core.deps.json
+/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingApp.Core/bin/Debug/net8.0/IssuesReportingApp.Core.dll
+/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingApp.Core/bin/Debug/net8.0/IssuesReportingApp.Core.pdb
+/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingApp.Core/obj/Debug/net8.0/IssuesReportingApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingApp.Core/obj/Debug/net8.0/IssuesReportingApp.Core.AssemblyInfoInputs.cache
+/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingApp.Core/obj/Debug/net8.0/IssuesReportingApp.Core.AssemblyInfo.cs
+/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingApp.Core/obj/Debug/net8.0/IssuesReportingApp.Core.csproj.CoreCompileInputs.cache
+/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingApp.Core/obj/Debug/net8.0/IssuesReportingApp.Core.sourcelink.json
+/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingApp.Core/obj/Debug/net8.0/IssuesReportingApp.Core.dll
+/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingApp.Core/obj/Debug/net8.0/refint/IssuesReportingApp.Core.dll
+/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingApp.Core/obj/Debug/net8.0/IssuesReportingApp.Core.pdb
+/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingApp.Core/obj/Debug/net8.0/ref/IssuesReportingApp.Core.dll

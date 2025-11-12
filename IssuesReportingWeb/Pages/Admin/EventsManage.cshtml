@@ -1,0 +1,122 @@
+@page
+@model IssuesReportingWeb.Pages.Admin.EventsManageModel
+@{
+    ViewData["Title"] = "Manage Events and Announcements";
+}
+
+<div class="container mt-4">
+    <div class="page-header d-flex align-items-center justify-content-between">
+        <h2>Manage Events / Announcements</h2>
+        <div class="d-flex gap-2">
+            <a class="btn btn-outline-secondary" asp-page="/Admin/Index">Back to Hub</a>
+            <a class="btn btn-primary" asp-page="/Admin/EventsAdd">Add New</a>
+        </div>
+    </div>
+
+    <div class="mb-2 d-flex flex-wrap gap-2">
+        <span class="chip ok">Upcoming @Model.UpcomingCount</span>
+        <span class="chip">Ongoing @Model.OngoingCount</span>
+        <span class="chip">Completed @Model.CompletedCount</span>
+        <span class="chip warn">Announcements @Model.AnnouncementsCount</span>
+    </div>
+
+    <div class="mb-3">
+        <form method="post" asp-page-handler="DeletePastEvents">
+            <button type="submit" class="btn btn-outline-danger">Delete past events</button>
+        </form>
+    </div>
+
+    <table class="table-modern">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Dates</th>
+                <th>Location</th>
+                <th>Category</th>
+                <th>Organizer</th>
+                <th>Priority</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var e in Model.Events)
+        {
+            var isAnn = e.IsAnnouncement ? "Announcement" : "Event";
+            <tr>
+                <td>@e.Id</td>
+                <td>@e.Title</td>
+                <td>@e.StartDate.ToString("g") - @e.EndDate.ToString("g")</td>
+                <td>@e.Location</td>
+                <td>@e.Category</td>
+                <td>@e.Organizer</td>
+                <td>
+                    <span class="chip @(e.Priority == 1 ? "danger" : (e.Priority == 2 ? "warn" : "ok"))">@e.PriorityText</span>
+                </td>
+                <td>
+                    <span class="chip @(e.IsAnnouncement ? "warn" : "ok")">@isAnn</span>
+                </td>
+                <td class="d-flex gap-2">
+                    <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#edit-@e.Id">Edit</button>
+                    <form method="post" asp-page-handler="DeleteEvent" class="d-inline">
+                        <input type="hidden" name="id" value="@e.Id" />
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <tr class="collapse" id="edit-@e.Id">
+                <td colspan="9">
+                    <div class="card card-body">
+                        <form method="post" asp-page-handler="UpdateEvent" class="row g-3">
+                            <input type="hidden" name="id" value="@e.Id" />
+                            <div class="col-md-6">
+                                <label class="form-label">Title</label>
+                                <input class="form-control" name="title" value="@e.Title" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Organizer</label>
+                                <input class="form-control" name="organizer" value="@e.Organizer" />
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control" name="description">@e.Description</textarea>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Start Date</label>
+                                <input class="form-control" type="datetime-local" name="startDate" value="@e.StartDate.ToString("yyyy-MM-ddTHH:mm")" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">End Date</label>
+                                <input class="form-control" type="datetime-local" name="endDate" value="@e.EndDate.ToString("yyyy-MM-ddTHH:mm")" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Location</label>
+                                <input class="form-control" name="location" value="@e.Location" />
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Category</label>
+                                <input class="form-control" name="category" value="@e.Category" />
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Priority</label>
+                                <input class="form-control" type="number" min="1" max="3" name="priority" value="@e.Priority" />
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Type</label>
+                                <select class="form-select" name="isAnnouncement">
+                                    <option value="false" selected>@(e.IsAnnouncement ? "Event" : "Event")</option>
+                                    <option value="true" selected=@(e.IsAnnouncement ? "selected" : null)>Announcement</option>
+                                </select>
+                            </div>
+                            <div class="col-12 d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

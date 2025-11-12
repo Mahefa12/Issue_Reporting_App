@@ -1,0 +1,165 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = IssuesReportingWeb
+build_property.RootNamespace = IssuesReportingWeb
+build_property.ProjectDir = /Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Admin/Events.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vRXZlbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Admin/EventsAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vRXZlbnRzQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Admin/EventsManage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vRXZlbnRzTWFuYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Admin/Ideas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vSWRlYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Admin/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Admin/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Admin/Requests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vUmVxdWVzdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Events/Announcements.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXZlbnRzL0Fubm91bmNlbWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Events/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXZlbnRzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Ideas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSWRlYXMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Ideas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSWRlYXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Issues/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSXNzdWVzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Issues/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSXNzdWVzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/ServiceRequests/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2VydmljZVJlcXVlc3RzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Admin/Events.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRXZlbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Admin/EventsAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRXZlbnRzQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Admin/EventsManage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vRXZlbnRzTWFuYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Admin/Ideas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSWRlYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Admin/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Admin/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Admin/Requests.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vUmVxdWVzdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Events/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnRzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Ideas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSWRlYXMvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Ideas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSWRlYXMvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Issues/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSXNzdWVzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/ServiceRequests/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2VydmljZVJlcXVlc3RzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

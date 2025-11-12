@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/css/bootstrap-lite.css",
+      "PackagePath": "staticwebassets/css/bootstrap-lite.css"
+    },
+    {
+      "Id": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/css/site.css",
+      "PackagePath": "staticwebassets/css/site.css"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.IssuesReportingWeb.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.IssuesReportingWeb.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.IssuesReportingWeb.props",
+      "PackagePath": "build\\IssuesReportingWeb.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.IssuesReportingWeb.props",
+      "PackagePath": "buildMultiTargeting\\IssuesReportingWeb.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.IssuesReportingWeb.props",
+      "PackagePath": "buildTransitive\\IssuesReportingWeb.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

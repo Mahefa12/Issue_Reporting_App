@@ -1,0 +1,106 @@
+@model IssuesReportingWeb.Controllers.HomeController.HomeViewModel
+
+<div class="hero mb-3 text-center">
+  <h1>Welcome to your Issue Reporting Platform</h1>
+  <p class="lead">Track local events, report issues, and share ideas.</p>
+</div>
+
+<div class="container mt-3">
+  <div class="row row-cols-1 g-4">
+    <!-- Tutorial 1: Report an Issue -->
+    <div class="col">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">1) Report an Issue</h5>
+          <p class="card-text">Spotted a problem like a pothole or broken streetlight? Tell us the details. Provide a clear title, description, and pick a category. Your report is logged immediately and sent to the right team.</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-primary" asp-controller="Issues" asp-action="Index">Submit a Report</a>
+            <a class="btn btn-outline-secondary" asp-controller="ServiceRequests" asp-action="Index">Track Existing Requests</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tutorial 2: View Events & Announcements -->
+    <div class="col">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">2) View Events &amp; Announcements</h5>
+          <p class="card-text">Stay in the loop with community events and notices (like service interruptions or road closures). Browse by location, category, or date, and discover what’s happening nearby.</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-primary" asp-controller="Events" asp-action="Index">Browse Events</a>
+            <a class="btn btn-outline-secondary" asp-controller="Events" asp-action="Index" asp-route-showAll="true">See All Announcements</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tutorial 3: Share an Improvement Idea -->
+    <div class="col">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">3) Share an Improvement Idea</h5>
+          <p class="card-text">Have a suggestion to make our community better? Propose an idea with a clear title and description. Others can view and vote, and accepted ideas move forward.</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-primary" asp-controller="Ideas" asp-action="Create">Submit an Idea</a>
+            <a class="btn btn-outline-secondary" asp-controller="Ideas" asp-action="Index">View Ideas</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tutorial 4: Track Requests by Identifier -->
+    <div class="col">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title">4) Track Service Requests</h5>
+          <p class="card-text">Follow the progress of requests using their identifier (e.g., ISSUE-1) or by searching titles. You can also explore dependency paths to see what's blocking a request.</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-primary" asp-controller="ServiceRequests" asp-action="Index">Track Requests</a>
+            <a class="btn btn-outline-secondary" asp-controller="ServiceRequests" asp-action="Index" asp-route-identifierQuery="ISSUE-1">Try Tracking ISSUE-1</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row g-4">
+    <div class="col-12 col-lg-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="card-title mb-0">Latest announcements</h5>
+            <a class="btn btn-outline-secondary btn-sm" asp-controller="Events" asp-action="Index">View all</a>
+          </div>
+          @if (Model.LatestAnnouncements?.Any() == true)
+          {
+            <div class="row row-cols-1 g-3 item-list">
+              @foreach (var a in Model.LatestAnnouncements)
+              {
+                <div class="col">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <div class="d-flex align-items-start justify-content-between">
+                        <div class="me-2">
+                          <div class="item-title">@a.Title</div>
+                          <div class="item-meta">@a.Location • @a.StartDate.ToLocalTime().ToString("MMMM d")</div>
+                        </div>
+                        <span class="chip chip-sm">Announcement</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          }
+          else
+          {
+            <div class="text-muted small">No announcements yet.</div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

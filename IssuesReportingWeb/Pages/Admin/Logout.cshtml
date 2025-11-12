@@ -1,0 +1,16 @@
+@page
+@model IssuesReportingWeb.Pages.Admin.LogoutModel
+@{
+    ViewData["Title"] = "Logout";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h2>Sign out</h2>
+        <a class="btn btn-secondary" asp-page="/Admin/Index">Back to Dashboard</a>
+    </div>
+
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Confirm Logout</button>
+    </form>
+</div>

@@ -1,0 +1,74 @@
+@{
+    ViewData["Title"] = "Events Hub";
+}
+
+<div class="container mt-4">
+    <div class="page-header d-flex align-items-center justify-content-between">
+        <h2>Events & Announcements</h2>
+        <a class="btn btn-outline-secondary" asp-controller="Admin" asp-action="Index">Back to Dashboard</a>
+    </div>
+
+    <p class="text-muted mb-4">
+        Create and manage community events or share important announcements. Provide clear titles,
+        dates, locations, and short descriptions so residents can quickly understand what’s happening.
+    </p>
+
+    <div class="row justify-content-center g-4">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Add Events / Announcements</h5>
+                    <p class="text-muted flex-grow-1">Create new local events or public announcements.</p>
+                    <a class="btn btn-primary" asp-controller="Admin" asp-action="EventsAdd">Add</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm h-100">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Manage Existing</h5>
+                    <p class="text-muted flex-grow-1">Edit or delete existing events and announcements.</p>
+                    <a class="btn btn-primary" asp-controller="Admin" asp-action="EventsManage">Manage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center g-4 mt-2">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Tips & Guidelines</h5>
+                    <ul class="list-unstyled small mb-0">
+                        <li>• Use clear, descriptive titles for events and announcements.</li>
+                        <li>• Include date, time, and location details where applicable.</li>
+                        <li>• Add a brief summary (1–2 sentences) for quick context.</li>
+                        <li>• Tag appropriately (event vs. announcement) to aid discovery.</li>
+                        <li>• Link to external pages for long-form details when needed.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Announcement Best Practices</h5>
+                    <ul class="list-unstyled small mb-3">
+                        <li>• Start with the most important information first.</li>
+                        <li>• Mention affected areas, dates, and required actions.</li>
+                        <li>• Provide contact info or references for follow-up questions.</li>
+                        <li>• Archive older announcements to keep the list tidy.</li>
+                    </ul>
+                    <div class="d-flex gap-2">
+                        <a asp-controller="Admin" asp-action="EventsAdd" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-plus-circle"></i> Create Announcement
+                        </a>
+                        <a asp-controller="Admin" asp-action="EventsManage" class="btn btn-outline-secondary btn-sm">
+                            <i class="bi bi-gear"></i> Review Existing Items
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

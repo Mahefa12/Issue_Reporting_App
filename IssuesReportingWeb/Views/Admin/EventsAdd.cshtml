@@ -1,0 +1,146 @@
+@model IssuesReportingWeb.Controllers.AdminController.EventsAddViewModel
+@{
+    ViewData["Title"] = "Add Event or Announcement";
+}
+
+<div class="container mt-4">
+    <div class="page-header d-flex align-items-center justify-content-between">
+        <h2>Add Event / Announcement</h2>
+        <a class="btn btn-secondary" asp-controller="Admin" asp-action="Events">Back</a>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Add Event</h5>
+                    <form method="post" asp-controller="Admin" asp-action="AddEvent">
+                        <div class="mb-3">
+                            <label class="form-label" asp-for="NewEvent.Title"></label>
+                            <input class="form-control" asp-for="NewEvent.Title" />
+                            <span class="text-danger" asp-validation-for="NewEvent.Title"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" asp-for="NewEvent.Description"></label>
+                            <textarea class="form-control" asp-for="NewEvent.Description"></textarea>
+                            <span class="text-danger" asp-validation-for="NewEvent.Description"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.StartDateDate">Start Date</label>
+                                <input type="date" class="form-control" asp-for="NewEvent.StartDateDate" />
+                                <span class="text-danger" asp-validation-for="NewEvent.StartDateDate"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.StartDateTime">Start Time</label>
+                                <input type="time" class="form-control" asp-for="NewEvent.StartDateTime" />
+                                <span class="text-danger" asp-validation-for="NewEvent.StartDateTime"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.EndDateDate">End Date</label>
+                                <input type="date" class="form-control" asp-for="NewEvent.EndDateDate" />
+                                <span class="text-danger" asp-validation-for="NewEvent.EndDateDate"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.EndDateTime">End Time</label>
+                                <input type="time" class="form-control" asp-for="NewEvent.EndDateTime" />
+                                <span class="text-danger" asp-validation-for="NewEvent.EndDateTime"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.Location"></label>
+                                <input class="form-control" asp-for="NewEvent.Location" />
+                                <span class="text-danger" asp-validation-for="NewEvent.Location"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.Organizer"></label>
+                                <input class="form-control" asp-for="NewEvent.Organizer" />
+                                <span class="text-danger" asp-validation-for="NewEvent.Organizer"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.Category"></label>
+                                <select class="form-select" asp-for="NewEvent.Category" asp-items="Model.CategoryOptions"></select>
+                                <span class="text-danger" asp-validation-for="NewEvent.Category"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.Priority"></label>
+                                <select class="form-select" asp-for="NewEvent.Priority">
+                                    <option value="1">Low</option>
+                                    <option value="2">Medium</option>
+                                    <option value="3">High</option>
+                                </select>
+                                <span class="text-danger" asp-validation-for="NewEvent.Priority"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Event</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Add Announcement</h5>
+                    <form method="post" asp-controller="Admin" asp-action="AddAnnouncement">
+                        <div class="mb-3">
+                            <label class="form-label" asp-for="NewEvent.Title"></label>
+                            <input class="form-control" asp-for="NewEvent.Title" />
+                            <span class="text-danger" asp-validation-for="NewEvent.Title"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" asp-for="NewEvent.Description"></label>
+                            <textarea class="form-control" asp-for="NewEvent.Description"></textarea>
+                            <span class="text-danger" asp-validation-for="NewEvent.Description"></span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.StartDateDate">Start Date</label>
+                                <input type="date" class="form-control" asp-for="NewEvent.StartDateDate" />
+                                <span class="text-danger" asp-validation-for="NewEvent.StartDateDate"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.StartDateTime">Start Time</label>
+                                <input type="time" class="form-control" asp-for="NewEvent.StartDateTime" />
+                                <span class="text-danger" asp-validation-for="NewEvent.StartDateTime"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.Location"></label>
+                                <input class="form-control" asp-for="NewEvent.Location" />
+                                <span class="text-danger" asp-validation-for="NewEvent.Location"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.Organizer"></label>
+                                <input class="form-control" asp-for="NewEvent.Organizer" />
+                                <span class="text-danger" asp-validation-for="NewEvent.Organizer"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.Category"></label>
+                                <select class="form-select" asp-for="NewEvent.Category" asp-items="Model.CategoryOptions"></select>
+                                <span class="text-danger" asp-validation-for="NewEvent.Category"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label" asp-for="NewEvent.Priority"></label>
+                                <select class="form-select" asp-for="NewEvent.Priority">
+                                    <option value="1">Low</option>
+                                    <option value="2">Medium</option>
+                                    <option value="3">High</option>
+                                </select>
+                                <span class="text-danger" asp-validation-for="NewEvent.Priority"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add Announcement</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

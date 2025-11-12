@@ -1,0 +1,82 @@
+@page
+@model IssuesReportingWeb.Pages.Admin.RequestsModel
+@{
+    ViewData["Title"] = "Manage Requests / Reports";
+}
+
+<div class="container mt-4">
+    <div class="page-header d-flex align-items-center justify-content-between">
+        <h2>Requests / Reports</h2>
+        <a class="btn btn-outline-secondary" asp-page="/Admin/Index">Back to Dashboard</a>
+    </div>
+
+    <div class="mb-2">
+        <form method="post" asp-page-handler="DeleteCompletedRequests">
+            <button type="submit" class="btn btn-outline-danger">Delete all completed</button>
+        </form>
+    </div>
+
+    <div class="mb-2 d-flex flex-wrap gap-2">
+        <span class="chip warn">Received @Model.ReceivedCount</span>
+        <span class="chip">In Progress @Model.InProgressCount</span>
+        <span class="chip warn">Waiting External @Model.WaitingOnExternalCount</span>
+        <span class="chip ok">Completed @Model.CompletedCount</span>
+        <span class="chip danger">Cancelled @Model.CancelledCount</span>
+    </div>
+
+    <table class="table-modern">
+        <thead>
+            <tr>
+                <th>Identifier</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Category</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var r in Model.Requests)
+            {
+                <tr>
+                    <td>@r.Identifier</td>
+                    <td>@r.Title</td>
+                    <td>
+                        <form method="post" asp-page-handler="UpdateRequest" class="d-flex align-items-center gap-2">
+                            <input type="hidden" name="identifier" value="@r.Identifier" />
+                            @{ var statusClass = r.Status == IssuesReportingApp.Models.ServiceRequestStatus.Completed ? "chip ok" 
+                                : r.Status == IssuesReportingApp.Models.ServiceRequestStatus.InProgress ? "chip warn" 
+                                : r.Status == IssuesReportingApp.Models.ServiceRequestStatus.WaitingOnExternal ? "chip warn" 
+                                : r.Status == IssuesReportingApp.Models.ServiceRequestStatus.Cancelled ? "chip danger" 
+                                : "chip"; }
+                            <span class="@statusClass">@r.Status</span>
+                            <select name="status" class="form-select form-select-sm" style="width: 200px;">
+                                <option value="Received" selected=@(r.Status == IssuesReportingApp.Models.ServiceRequestStatus.Received ? "selected" : null)>Received</option>
+                                <option value="InProgress" selected=@(r.Status == IssuesReportingApp.Models.ServiceRequestStatus.InProgress ? "selected" : null)>In Progress</option>
+                                <option value="WaitingOnExternal" selected=@(r.Status == IssuesReportingApp.Models.ServiceRequestStatus.WaitingOnExternal ? "selected" : null)>Waiting on External</option>
+                                <option value="Completed" selected=@(r.Status == IssuesReportingApp.Models.ServiceRequestStatus.Completed ? "selected" : null)>Completed</option>
+                                <option value="Cancelled" selected=@(r.Status == IssuesReportingApp.Models.ServiceRequestStatus.Cancelled ? "selected" : null)>Cancelled</option>
+                            </select>
+                            <button type="submit" class="btn btn-sm btn-primary">Update</button>
+                        </form>
+                    </td>
+                    <td>
+                        @{ var prText = r.Priority == 1 ? "High" : r.Priority == 2 ? "Medium" : "Low"; 
+                           var prClass = r.Priority == 1 ? "chip danger" : r.Priority == 2 ? "chip warn" : "chip ok"; }
+                        <span class="@prClass">@prText</span>
+                    </td>
+                    <td>@r.Category</td>
+                    <td>
+                        @if (r.Status == IssuesReportingApp.Models.ServiceRequestStatus.Completed || r.Status == IssuesReportingApp.Models.ServiceRequestStatus.Cancelled)
+                        {
+                            <form method="post" asp-page-handler="DeleteRequest">
+                                <input type="hidden" name="identifier" value="@r.Identifier" />
+                                <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,221 @@
+@page
+@model IndexModel
+
+<style>
+  .home-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  @@media (min-width: 768px) {
+    .home-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  @@media (min-width: 992px) {
+    .home-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  .home-grid .span-all {
+    grid-column: 1 / -1;
+  }
+  .section-card .card-body {
+    padding: 1rem 1rem;
+  }
+  .item-list .item-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    line-height: 1.25;
+  }
+  .item-list .item-meta {
+    font-size: 0.85rem;
+    color: #6c757d;
+  }
+  .chip-sm {
+    font-size: 0.65rem;
+    padding: 0.05rem 0.35rem;
+    border-radius: 10px;
+    line-height: 1.1;
+  }
+  .welcome-banner {
+    background: linear-gradient(90deg, #6a5ae0, #8a5cf6);
+    color: #fff;
+    padding: 1rem 1.25rem;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(106, 90, 224, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+</style>
+<div class="welcome-banner mb-3">
+  Welcome to your Issue Reporting Platform
+  </div>
+<!-- Quick action buttons removed per request -->
+<div class="home-grid">
+    <div class="card h-100 shadow-sm section-card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">Upcoming Events</h5>
+                <a class="btn btn-outline-secondary btn-sm" asp-page="/Events/Index">View all</a>
+            </div>
+            @if (Model.Events?.Any() == true)
+            {
+                <div class="row row-cols-1 row-cols-md-2 g-3 item-list">
+                    @foreach (var e in Model.Events)
+                    {
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start justify-content-between">
+                                        <div class="me-2">
+                                            <div class="item-title">@e.Event.Title</div>
+                                            <div class="item-meta">@e.Event.Location • @e.Event.StartDate.ToLocalTime().ToString("MMMM d")</div>
+                                        </div>
+                                        <span class="chip chip-sm">@e.Event.Category</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="empty-state">
+                    <span class="icon">📅</span>
+                    <div>No events available.</div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="card h-100 shadow-sm section-card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">Reported Issues</h5>
+                <a class="btn btn-outline-secondary btn-sm" asp-page="/Issues/Index">View all</a>
+            </div>
+            @if (Model.RecentIssues?.Any() == true)
+            {
+                <div class="row row-cols-1 row-cols-md-2 g-3 item-list">
+                    @foreach (var i in Model.RecentIssues)
+                    {
+                        var chipClass = (i.Priority?.Equals("High", StringComparison.OrdinalIgnoreCase) == true)
+                            ? "chip danger"
+                            : (i.Priority?.Equals("Medium", StringComparison.OrdinalIgnoreCase) == true)
+                                ? "chip warn"
+                                : "chip ok";
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="me-2">
+                                            <div class="item-title">@i.Title</div>
+                                            <div class="item-meta">@i.Category</div>
+                                        </div>
+                                        <div class="item-meta">@i.CreatedDate.ToLocalTime().ToString("g")</div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2 mt-2">
+                                        <span class="@chipClass">@i.Priority</span>
+                                        <span class="chip">@i.Status</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="empty-state">
+                    <span class="icon">📢</span>
+                    <div>No reported issues</div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="card h-100 shadow-sm section-card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="mb-0">Submitted Ideas</h5>
+                <a class="btn btn-outline-secondary btn-sm" asp-page="/Ideas/Index">View all</a>
+            </div>
+            @if (Model.RecentIdeas?.Any() == true)
+            {
+                <div class="row row-cols-1 row-cols-md-2 g-3 item-list">
+                    @foreach (var idea in Model.RecentIdeas)
+                    {
+                        <div class="col">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="me-2">
+                                            <div class="item-title">@idea.Title</div>
+                                            <div class="item-meta">@idea.Category • by @idea.SubmittedBy</div>
+                                        </div>
+                                        <span class="chip ok chip-sm">@idea.Votes votes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="empty-state">
+                    <span class="icon">💡</span>
+                    <div>No ideas submitted yet</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Ideas card moved above into the CSS Grid layout -->
+
+<div class="container mt-4">
+  <div class="row g-4">
+    <div class="col-12 col-lg-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="card-title mb-0">Latest announcements</h5>
+            <a class="btn btn-outline-secondary btn-sm" asp-page="/Events/Index">View all</a>
+          </div>
+          @if (Model.LatestAnnouncements?.Any() == true)
+          {
+            <div class="row row-cols-1 g-3 item-list">
+              @foreach (var a in Model.LatestAnnouncements)
+              {
+                <div class="col">
+                  <div class="card h-100">
+                    <div class="card-body">
+                      <div class="d-flex align-items-start justify-content-between">
+                        <div class="me-2">
+                          <div class="item-title">@a.Title</div>
+                          <div class="item-meta">@a.Location • @a.StartDate.ToLocalTime().ToString("MMMM d")</div>
+                        </div>
+                        <span class="chip chip-sm">Announcement</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          }
+          else
+          {
+            <div class="text-muted small">No announcements yet.</div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

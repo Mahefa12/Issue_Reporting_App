@@ -1,0 +1,42 @@
+@page
+@model AnnouncementsModel
+@using IssuesReportingApp.Models
+
+<div class="page-header d-flex align-items-center justify-content-between">
+    <h2>Announcements</h2>
+    <div class="d-flex gap-2">
+        <a class="btn btn-outline-secondary" asp-page="/Events/Index">Back to Events</a>
+    </div>
+</div>
+
+@if (Model.Announcements?.Any() == true)
+{
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+    @foreach (var ann in Model.Announcements)
+    {
+        <div class="col">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex align-items-start justify-content-between">
+                        <h5 class="card-title">@ann.Title</h5>
+                        <span class="chip">Announcement</span>
+                    </div>
+                    <p class="card-text">@ann.Description</p>
+                    <div class="event-meta">
+                        <div><strong>Date:</strong> @ann.FormattedDateRange</div>
+                        <div><strong>Location:</strong> @ann.Location</div>
+                        <div><strong>Organizer:</strong> @ann.Organizer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+}
+else
+{
+    <div class="empty-state">
+        <div class="icon">📣</div>
+        <div>No announcements available right now.</div>
+    </div>
+}

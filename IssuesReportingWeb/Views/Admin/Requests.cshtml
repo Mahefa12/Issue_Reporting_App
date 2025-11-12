@@ -1,0 +1,77 @@
+@model IssuesReportingWeb.Controllers.AdminController.RequestsViewModel
+@{
+    ViewData["Title"] = "Manage Requests";
+}
+
+<div class="container mt-4">
+    <div class="page-header d-flex align-items-center justify-content-between">
+        <h2>Service Requests</h2>
+        <a class="btn btn-secondary" asp-controller="Admin" asp-action="Index">Back to Dashboard</a>
+    </div>
+
+    <div class="row g-4 mt-1">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Summary</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="chip">Received @Model.ReceivedCount</span>
+                        <span class="chip warn">In Progress @Model.InProgressCount</span>
+                        <span class="chip">Waiting External @Model.WaitingOnExternalCount</span>
+                        <span class="chip ok">Completed @Model.CompletedCount</span>
+                        <span class="chip">Cancelled @Model.CancelledCount</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+            <h5 class="card-title">All Requests</h5>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Identifier</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Priority</th>
+                            <th>Created</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var r in Model.Requests)
+                        {
+                            <tr>
+                                <td>@r.Identifier</td>
+                                <td>@r.Title</td>
+                                <td>@r.Status</td>
+                                <td>@r.Priority</td>
+                                <td>@r.CreatedDate.ToString("yyyy-MM-dd HH:mm")</td>
+                                <td class="text-end">
+                                    <form method="post" asp-controller="Admin" asp-action="UpdateRequest" class="d-inline-flex align-items-center gap-2">
+                                        <input type="hidden" name="identifier" value="@r.Identifier" />
+                                        <select class="form-select form-select-sm" name="status" style="width:auto">
+                                            @if (r.Status == IssuesReportingApp.Models.ServiceRequestStatus.Received) {<option value="Received" selected>Received</option>} else {<option value="Received">Received</option>}
+                                            @if (r.Status == IssuesReportingApp.Models.ServiceRequestStatus.InProgress) {<option value="InProgress" selected>In Progress</option>} else {<option value="InProgress">In Progress</option>}
+                                            @if (r.Status == IssuesReportingApp.Models.ServiceRequestStatus.WaitingOnExternal) {<option value="WaitingOnExternal" selected>Waiting External</option>} else {<option value="WaitingOnExternal">Waiting External</option>}
+                                            @if (r.Status == IssuesReportingApp.Models.ServiceRequestStatus.Completed) {<option value="Completed" selected>Completed</option>} else {<option value="Completed">Completed</option>}
+                                            @if (r.Status == IssuesReportingApp.Models.ServiceRequestStatus.Cancelled) {<option value="Cancelled" selected>Cancelled</option>} else {<option value="Cancelled">Cancelled</option>}
+                                        </select>
+                                        <button type="submit" class="btn btn-sm btn-outline-primary">Update</button>
+                                    </form>
+                                    <form method="post" asp-controller="Admin" asp-action="DeleteRequest" class="d-inline">
+                                        <input type="hidden" name="identifier" value="@r.Identifier" />
+                                        <button type="submit" class="btn btn-sm btn-outline-danger ms-2">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

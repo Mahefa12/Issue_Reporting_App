@@ -1,0 +1,84 @@
+@model IssuesReportingWeb.Controllers.AdminController.IdeasViewModel
+@{
+    ViewData["Title"] = "Manage Ideas";
+}
+
+<div class="container mt-4">
+    <div class="page-header d-flex align-items-center justify-content-between">
+        <h2>Improvement Ideas</h2>
+        <a class="btn btn-secondary" asp-controller="Admin" asp-action="Index">Back to Dashboard</a>
+    </div>
+
+    <div class="row g-4 mt-1">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Summary</h5>
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="chip warn">Submitted @Model.SubmittedCount</span>
+                        <span class="chip ok">Accepted @Model.AcceptedCount</span>
+                        <span class="chip">Rejected @Model.RejectedCount</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Actions</h5>
+                    <p class="text-muted">Accept or reject ideas.</p>
+                    <form method="post" asp-controller="Admin" asp-action="AcceptIdea" class="d-flex gap-2">
+                        <input class="form-control" type="number" name="id" placeholder="Idea ID" />
+                        <button type="submit" class="btn btn-outline-success">Accept</button>
+                    </form>
+                    <form method="post" asp-controller="Admin" asp-action="RejectIdea" class="d-flex gap-2 mt-2">
+                        <input class="form-control" type="number" name="id" placeholder="Idea ID" />
+                        <button type="submit" class="btn btn-outline-secondary">Reject</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm mt-4">
+        <div class="card-body">
+            <h5 class="card-title">All Ideas</h5>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Status</th>
+                            <th>Votes</th>
+                            <th>Submitted</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var i in Model.Ideas)
+                        {
+                            <tr>
+                                <td>@i.Id</td>
+                                <td>@i.Title</td>
+                                <td>@i.Status</td>
+                                <td>@i.Votes</td>
+                                <td>@i.CreatedDate.ToString("yyyy-MM-dd HH:mm")</td>
+                                <td class="text-end">
+                                    <form method="post" asp-controller="Admin" asp-action="AcceptIdea" class="d-inline">
+                                        <input type="hidden" name="id" value="@i.Id" />
+                                        <button type="submit" class="btn btn-sm btn-outline-success">Accept</button>
+                                    </form>
+                                    <form method="post" asp-controller="Admin" asp-action="RejectIdea" class="d-inline">
+                                        <input type="hidden" name="id" value="@i.Id" />
+                                        <button type="submit" class="btn btn-sm btn-outline-secondary ms-1">Reject</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

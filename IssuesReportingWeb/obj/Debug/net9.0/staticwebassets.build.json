@@ -1,0 +1,702 @@
+{
+  "Version": 1,
+  "Hash": "qK3cOQTS84p6j/a7si8E0tNXx1OyB+uWz8sE//xU2ig=",
+  "Source": "IssuesReportingWeb",
+  "BasePath": "_content/IssuesReportingWeb",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "IssuesReportingWeb/wwwroot",
+      "Source": "IssuesReportingWeb",
+      "ContentRoot": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/",
+      "BasePath": "_content/IssuesReportingWeb",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/obj/Debug/net9.0/compressed/mtf3a41mwk-f5xlu08ywp.gz",
+      "SourceId": "IssuesReportingWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/obj/Debug/net9.0/compressed/",
+      "BasePath": "_content/IssuesReportingWeb",
+      "RelativePath": "css/bootstrap-lite#[.{fingerprint=f5xlu08ywp}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/css/bootstrap-lite.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "7jkeeaa3ob",
+      "Integrity": "jQpf4wNyAhm14XVbpv+bq6aExerpGqLntwf+mO/nBJE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/css/bootstrap-lite.css"
+    },
+    {
+      "Identity": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/obj/Debug/net9.0/compressed/x67y7ug5j2-6x5txl0xox.gz",
+      "SourceId": "IssuesReportingWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/obj/Debug/net9.0/compressed/",
+      "BasePath": "_content/IssuesReportingWeb",
+      "RelativePath": "css/site#[.{fingerprint=6x5txl0xox}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/css/site.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "nkslvbookv",
+      "Integrity": "546ujQpiQVIZrTn9SsJa9Qd7XP3PJfzFJe/VQLEPNfM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/css/bootstrap-lite.css",
+      "SourceId": "IssuesReportingWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/",
+      "BasePath": "_content/IssuesReportingWeb",
+      "RelativePath": "css/bootstrap-lite#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "f5xlu08ywp",
+      "Integrity": "7YbOpN52r+y3c5s6t8MGVCxMShvL03g+JYYlxryIRN4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/bootstrap-lite.css"
+    },
+    {
+      "Identity": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/css/site.css",
+      "SourceId": "IssuesReportingWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/",
+      "BasePath": "_content/IssuesReportingWeb",
+      "RelativePath": "css/site#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6x5txl0xox",
+      "Integrity": "xsc7b/hq/K37mECTBqoOyYVo4waRbF5B8hemLfJjSJg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/site.css"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/bootstrap-lite.css",
+      "AssetFile": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/obj/Debug/net9.0/compressed/mtf3a41mwk-f5xlu08ywp.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000641025641"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1559"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jQpf4wNyAhm14XVbpv+bq6aExerpGqLntwf+mO/nBJE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Nov 2025 09:25:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"7YbOpN52r+y3c5s6t8MGVCxMShvL03g+JYYlxryIRN4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7YbOpN52r+y3c5s6t8MGVCxMShvL03g+JYYlxryIRN4="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap-lite.css",
+      "AssetFile": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/css/bootstrap-lite.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4859"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7YbOpN52r+y3c5s6t8MGVCxMShvL03g+JYYlxryIRN4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Nov 2025 09:25:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7YbOpN52r+y3c5s6t8MGVCxMShvL03g+JYYlxryIRN4="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap-lite.css.gz",
+      "AssetFile": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/obj/Debug/net9.0/compressed/mtf3a41mwk-f5xlu08ywp.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1559"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jQpf4wNyAhm14XVbpv+bq6aExerpGqLntwf+mO/nBJE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Nov 2025 09:25:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-jQpf4wNyAhm14XVbpv+bq6aExerpGqLntwf+mO/nBJE="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap-lite.f5xlu08ywp.css",
+      "AssetFile": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/obj/Debug/net9.0/compressed/mtf3a41mwk-f5xlu08ywp.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000641025641"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1559"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jQpf4wNyAhm14XVbpv+bq6aExerpGqLntwf+mO/nBJE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Nov 2025 09:25:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"7YbOpN52r+y3c5s6t8MGVCxMShvL03g+JYYlxryIRN4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f5xlu08ywp"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap-lite.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7YbOpN52r+y3c5s6t8MGVCxMShvL03g+JYYlxryIRN4="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap-lite.f5xlu08ywp.css",
+      "AssetFile": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/css/bootstrap-lite.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4859"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7YbOpN52r+y3c5s6t8MGVCxMShvL03g+JYYlxryIRN4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Nov 2025 09:25:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f5xlu08ywp"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap-lite.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7YbOpN52r+y3c5s6t8MGVCxMShvL03g+JYYlxryIRN4="
+        }
+      ]
+    },
+    {
+      "Route": "css/bootstrap-lite.f5xlu08ywp.css.gz",
+      "AssetFile": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/obj/Debug/net9.0/compressed/mtf3a41mwk-f5xlu08ywp.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1559"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"jQpf4wNyAhm14XVbpv+bq6aExerpGqLntwf+mO/nBJE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 10 Nov 2025 09:25:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "f5xlu08ywp"
+        },
+        {
+          "Name": "label",
+          "Value": "css/bootstrap-lite.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-jQpf4wNyAhm14XVbpv+bq6aExerpGqLntwf+mO/nBJE="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.6x5txl0xox.css",
+      "AssetFile": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/obj/Debug/net9.0/compressed/x67y7ug5j2-6x5txl0xox.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000295508274"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3383"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"546ujQpiQVIZrTn9SsJa9Qd7XP3PJfzFJe/VQLEPNfM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 09:39:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"xsc7b/hq/K37mECTBqoOyYVo4waRbF5B8hemLfJjSJg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6x5txl0xox"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xsc7b/hq/K37mECTBqoOyYVo4waRbF5B8hemLfJjSJg="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.6x5txl0xox.css",
+      "AssetFile": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11556"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xsc7b/hq/K37mECTBqoOyYVo4waRbF5B8hemLfJjSJg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 09:39:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6x5txl0xox"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xsc7b/hq/K37mECTBqoOyYVo4waRbF5B8hemLfJjSJg="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.6x5txl0xox.css.gz",
+      "AssetFile": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/obj/Debug/net9.0/compressed/x67y7ug5j2-6x5txl0xox.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3383"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"546ujQpiQVIZrTn9SsJa9Qd7XP3PJfzFJe/VQLEPNfM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 09:39:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6x5txl0xox"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-546ujQpiQVIZrTn9SsJa9Qd7XP3PJfzFJe/VQLEPNfM="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/obj/Debug/net9.0/compressed/x67y7ug5j2-6x5txl0xox.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000295508274"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3383"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"546ujQpiQVIZrTn9SsJa9Qd7XP3PJfzFJe/VQLEPNfM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 09:39:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"xsc7b/hq/K37mECTBqoOyYVo4waRbF5B8hemLfJjSJg=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xsc7b/hq/K37mECTBqoOyYVo4waRbF5B8hemLfJjSJg="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css",
+      "AssetFile": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/wwwroot/css/site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11556"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xsc7b/hq/K37mECTBqoOyYVo4waRbF5B8hemLfJjSJg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 09:39:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xsc7b/hq/K37mECTBqoOyYVo4waRbF5B8hemLfJjSJg="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.css.gz",
+      "AssetFile": "/Users/mahefanyavo/Desktop/VC bachelor year 3/PROG7312 (CLive)/Part 2/ST10077855_IssuesReportingApp/IssuesReportingWeb/obj/Debug/net9.0/compressed/x67y7ug5j2-6x5txl0xox.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "3383"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"546ujQpiQVIZrTn9SsJa9Qd7XP3PJfzFJe/VQLEPNfM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 09:39:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-546ujQpiQVIZrTn9SsJa9Qd7XP3PJfzFJe/VQLEPNfM="
+        }
+      ]
+    }
+  ]
+}

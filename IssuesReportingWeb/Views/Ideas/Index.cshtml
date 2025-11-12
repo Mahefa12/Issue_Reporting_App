@@ -1,0 +1,53 @@
+@model IssuesReportingWeb.Controllers.IdeasController.IdeasIndexViewModel
+@{
+    ViewData["Title"] = "Improvement Ideas";
+}
+
+<div class="page-header">
+    <h1>Improvement Ideas</h1>
+    <div class="d-flex gap-2">
+        <a class="btn btn-primary" asp-controller="Ideas" asp-action="Create"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm3.5 7.5H8.5v3a.5.5 0 0 1-1 0v-3H4.5a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0v3h3a.5.5 0 0 1 0 1z"/></svg>Submit an idea</a>
+    </div>
+ </div>
+
+<!-- Search UI removed per request -->
+
+@if (!Model.Items.Any())
+{
+    <div class="empty-state">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a5.5 5.5 0 0 0-5.5 5.5c0 2.042 1.234 3.825 3.004 4.64.248.116.496.27.68.46L7 12h2l.816-1.4c.185-.19.433-.344.68-.46A5.5 5.5 0 0 0 13.5 5.5 5.5 5.5 0 0 0 8 0z"/></svg>
+        <p>No ideas yet. Share your thoughts to improve the community.</p>
+        <a class="btn btn-primary" asp-controller="Ideas" asp-action="Create">Submit first idea</a>
+    </div>
+}
+else
+{
+    <table class="table table-striped table-hover align-middle table-modern">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Submitted By</th>
+                <th>Votes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var idea in Model.Items)
+        {
+            <tr>
+                <td class="fw-semibold">@idea.Title</td>
+                <td><span class="chip">@idea.Category</span></td>
+                <td>@idea.SubmittedBy</td>
+                <td>@idea.Votes</td>
+                <td>
+                    <form method="post" asp-controller="Ideas" asp-action="Vote">
+                        <input type="hidden" name="id" value="@idea.Id" />
+                        <button type="submit" class="btn btn-outline-success btn-pill"><svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"><path d="M6.5 10.5l-3-3 1-1 2 2 4-4 1 1-5 5z"/></svg>Vote</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

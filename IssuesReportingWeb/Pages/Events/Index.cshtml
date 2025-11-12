@@ -1,0 +1,189 @@
+@page
+@model EventsIndexModel
+@using IssuesReportingApp.Models
+@using IssuesReportingApp.Services
+
+<div class="page-header d-flex align-items-center justify-content-between">
+    <h2>Local Events & Announcements</h2>
+    <div class="d-flex gap-2">
+        <form method="get" class="d-inline">
+            <input type="hidden" name="category" value="@Model.Category" />
+            <input type="hidden" name="location" value="@Model.Location" />
+            <input type="hidden" name="startDate" value="@Model.StartDate?.ToString("yyyy-MM-dd")" />
+            <input type="hidden" name="endDate" value="@Model.EndDate?.ToString("yyyy-MM-dd")" />
+            <input type="hidden" name="priority" value="@Model.Priority" />
+            @if (!Model.ShowAll)
+            {
+                <button type="submit" name="showAll" value="true" class="btn btn-outline-primary">View All Events</button>
+            }
+            else
+            {
+                <button type="submit" name="showAll" value="false" class="btn btn-outline-primary">Back to Recommendations</button>
+            }
+        </form>
+    </div>
+    </div>
+
+<form method="get" class="mb-3">
+    <div class="filters-row d-flex align-items-end flex-nowrap gap-2">
+        <input type="hidden" name="showAll" value="true" />
+        <div class="filter-item">
+            <label class="form-label small" for="category">Category</label>
+            <select id="category" name="category" class="form-select form-select-sm">
+                <option value="">All</option>
+                @foreach (var cat in Model.AvailableCategories)
+                {
+                    <option value="@cat" selected="@(string.Equals(Model.Category, cat, StringComparison.OrdinalIgnoreCase))">@cat</option>
+                }
+            </select>
+        </div>
+        <div class="filter-item">
+            <label class="form-label small" for="location">Location</label>
+            <select id="location" name="location" class="form-select form-select-sm">
+                <option value="">All</option>
+                @foreach (var loc in Model.AvailableLocations)
+                {
+                    <option value="@loc" selected="@(string.Equals(Model.Location, loc, StringComparison.OrdinalIgnoreCase))">@loc</option>
+                }
+            </select>
+        </div>
+        <div class="filter-item date-group">
+            <label class="form-label small" for="startDate">From</label>
+            <input id="startDate" name="startDate" type="date" class="form-control form-control-sm" value="@Model.StartDate?.ToString("yyyy-MM-dd")" />
+        </div>
+        <div class="filter-item date-group">
+            <label class="form-label small" for="endDate">To</label>
+            <input id="endDate" name="endDate" type="date" class="form-control form-control-sm" value="@Model.EndDate?.ToString("yyyy-MM-dd")" />
+        </div>
+        <div class="filter-item">
+            <label class="form-label small" for="priority">Priority</label>
+            <select id="priority" name="priority" class="form-select form-select-sm">
+                <option value="">All</option>
+                <option value="Low" selected="@(Model.Priority=="Low")">Low</option>
+                <option value="Medium" selected="@(Model.Priority=="Medium")">Medium</option>
+                <option value="High" selected="@(Model.Priority=="High")">High</option>
+            </select>
+        </div>
+    </div>
+    <div class="filters-actions d-flex gap-2 mt-2">
+        <button type="submit" class="btn btn-sm btn-primary">Apply</button>
+        <a class="btn btn-sm btn-outline-secondary" asp-page="/Events/Index">Clear</a>
+    </div>
+</form>
+
+<div class="row g-4">
+    <div class="col-12 col-sm-6">
+        @if (!Model.ShowAll)
+        {
+            <h3 class="mb-3">Recommended Events</h3>
+            <div class="row row-cols-1 g-3">
+            @foreach (var rec in Model.Recommendations)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start justify-content-between">
+                                <h5 class="card-title">@rec.Event.Title</h5>
+                                <span class="chip">@rec.Type</span>
+                            </div>
+                            <div class="mb-2">
+                                <span class="chip">@rec.Event.Category</span>
+                                <span class="chip warn">@rec.Event.PriorityText</span>
+                            </div>
+                            <p class="card-text">@rec.Event.Description</p>
+                            <div class="event-meta">
+                                <div><strong>Date:</strong> @rec.Event.FormattedDateRange</div>
+                                <div><strong>Location:</strong> @rec.Event.Location</div>
+                                <div><strong>Organizer:</strong> @rec.Event.Organizer</div>
+                            </div>
+                            <div class="mt-3 d-flex gap-2">
+                                <form method="post" asp-page-handler="Like" class="d-inline">
+                                    <input type="hidden" name="id" value="@rec.Event.Id" />
+                                    <button type="submit" class="btn btn-sm btn-success">Like</button>
+                                </form>
+                                <form method="post" asp-page-handler="Dislike" class="d-inline">
+                                    <input type="hidden" name="id" value="@rec.Event.Id" />
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">Dislike</button>
+                                </form>
+                            </div>
+                        </div>
+                        @if (!string.IsNullOrWhiteSpace(rec.Reason))
+                        {
+                            <div class="card-footer"><small class="text-muted">Reason: @rec.Reason</small></div>
+                        }
+                    </div>
+                </div>
+            }
+            </div>
+        }
+        else
+        {
+            <h3 class="mb-3">All Events</h3>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @foreach (var e in Model.AllEvents)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start justify-content-between">
+                                <h5 class="card-title">@e.Title</h5>
+                                <span class="chip">@e.Category</span>
+                            </div>
+                            <div class="mb-2">
+                                <span class="chip warn">@e.PriorityText</span>
+                            </div>
+                            <p class="card-text">@e.Description</p>
+                            <div class="event-meta">
+                                <div><strong>Date:</strong> @e.FormattedDateRange</div>
+                                <div><strong>Location:</strong> @e.Location</div>
+                                <div><strong>Organizer:</strong> @e.Organizer</div>
+                            </div>
+                            <div class="mt-3 d-flex gap-2">
+                                <form method="post" asp-page-handler="Like" class="d-inline">
+                                    <input type="hidden" name="id" value="@e.Id" />
+                                    <button type="submit" class="btn btn-sm btn-success">Like</button>
+                                </form>
+                                <form method="post" asp-page-handler="Dislike" class="d-inline">
+                                    <input type="hidden" name="id" value="@e.Id" />
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">Dislike</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+        }
+    </div>
+    <div class="col-12 col-sm-6">
+        <h3 class="mb-3">Announcements</h3>
+        @if (Model.Announcements?.Any() == true)
+        {
+            <div class="row row-cols-1 g-3 mb-4">
+            @foreach (var ann in Model.Announcements)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex align-items-start justify-content-between">
+                                <h5 class="card-title">@ann.Title</h5>
+                                <span class="chip">Announcement</span>
+                            </div>
+                            <p class="card-text">@ann.Description</p>
+                            <div class="event-meta">
+                                <div><strong>Date:</strong> @ann.FormattedDateRange</div>
+                                <div><strong>Location:</strong> @ann.Location</div>
+                                <div><strong>Organizer:</strong> @ann.Organizer</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+        }
+        else
+        {
+            <div class="mb-4">No announcements available.</div>
+        }
+    </div>
+</div>

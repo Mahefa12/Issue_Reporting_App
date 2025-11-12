@@ -1,0 +1,125 @@
+@page
+@model IssuesReportingWeb.Pages.Issues.IndexModel
+@{
+    ViewData["Title"] = "Report Issue";
+}
+
+<div class="page-header">
+    <h1>Report an Issue</h1>
+</div>
+
+@if (TempData["Success"] is string success && !string.IsNullOrEmpty(success))
+{
+    <div class="alert alert-success" role="alert">@success</div>
+}
+
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+    <div class="stack-lg">
+        <div class="card-lite">
+            <div class="card-body d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
+                    <div>
+                        <div class="fw-semibold">Add Photo or Video</div>
+                        <div class="text-muted">Attach evidence to help triage faster.</div>
+                    </div>
+                </div>
+                <label class="btn btn-outline-secondary btn-pill mb-0">
+                    <input type="file" name="media" accept="image/*,video/*" hidden />
+                    Upload
+                </label>
+            </div>
+        </div>
+
+        <div class="card-lite">
+            <div class="card-body">
+                <label class="form-label" asp-for="Input.Title">Title <span class="text-danger">*</span></label>
+                <input class="form-control" asp-for="Input.Title" placeholder="Short summary" required />
+                <span class="text-danger" asp-validation-for="Input.Title"></span>
+            </div>
+        </div>
+
+        <div class="card-lite">
+            <div class="card-body">
+                <label class="form-label" asp-for="Input.Description">Description <span class="text-danger">*</span></label>
+                <textarea class="form-control" asp-for="Input.Description" rows="5" placeholder="Describe what happened" required></textarea>
+                <span class="text-danger" asp-validation-for="Input.Description"></span>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="card-lite">
+                    <div class="card-body">
+                        <label class="form-label">Location</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-transparent border-0 p-0 me-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6-4.35-6-10a6 6 0 1 1 12 0c0 5.65-6 10-6 10z"/><circle cx="12" cy="11" r="2"/></svg>
+                            </span>
+                            <input type="text" name="Location" class="form-control" placeholder="Auto-detected or enter manually" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-lite">
+                    <div class="card-body">
+                        <label class="form-label" asp-for="Input.Category">Category <span class="text-danger">*</span></label>
+                        <select class="form-select" asp-for="Input.Category" required>
+                            <option>Transport & Traffic</option>
+                            <option>Road Maintenance</option>
+                            <option>Streetlights</option>
+                            <option>Electricity</option>
+                            <option>Water</option>
+                            <option>Sewage & Drainage</option>
+                            <option>Waste Collection</option>
+                            <option>Parks & Recreation</option>
+                            <option>Public Safety</option>
+                            <option>Environmental</option>
+                            <option>Noise Complaint</option>
+                            <option>Illegal Dumping</option>
+                            <option>Signage</option>
+                            <option>Tree Maintenance</option>
+                            <option>Housing</option>
+                            <option>Other</option>
+                        </select>
+                        <span class="text-danger" asp-validation-for="Input.Category"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="card-lite"><div class="card-body">
+                    <label class="form-label" asp-for="Input.Priority">Priority</label>
+                    <select class="form-select" asp-for="Input.Priority">
+                        <option>Low</option>
+                        <option>Medium</option>
+                        <option>High</option>
+                    </select>
+                </div></div>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="card-lite"><div class="card-body">
+                    <label class="form-label" asp-for="Input.ReporterName">Your name</label>
+                    <input class="form-control" asp-for="Input.ReporterName" placeholder="Optional" />
+                </div></div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-lite"><div class="card-body">
+                    <label class="form-label" asp-for="Input.ContactInfo">Contact info</label>
+                    <input class="form-control" asp-for="Input.ContactInfo" placeholder="Email or phone (optional)" />
+                </div></div>
+            </div>
+        </div>
+
+        <div class="sticky-cta mt-3">
+            <button type="submit" class="btn btn-primary btn-pill cta-full">Submit Report</button>
+        </div>
+    </div>
+</form>

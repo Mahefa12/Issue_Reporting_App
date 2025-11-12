@@ -1,0 +1,161 @@
+@page
+@model IssuesReportingWeb.Pages.ServiceRequests.IndexModel
+@{
+    ViewData["Title"] = "Service Requests";
+}
+
+<div class="page-header">
+    <h1>Service Requests</h1>
+    <div class="d-flex gap-2">
+        <a class="btn btn-outline-secondary" asp-page="/Index">Home</a>
+    </div>
+</div>
+
+<form method="get" class="mb-3">
+    <div class="row g-2 align-items-end">
+        <div class="col-md-6">
+            <div class="input-group">
+                <input type="text" class="form-control" name="SearchQuery" value="@(Model.SearchQuery ?? Model.IdentifierQuery)" list="request-suggestions" placeholder="Search by title or ID (e.g., ISSUE-1 or Streetlight repair)" />
+                <button type="submit" class="btn btn-primary btn-pill">Search</button>
+            </div>
+            <div class="form-text">Type a title or identifier; select a suggestion or click Search.</div>
+            <datalist id="request-suggestions">
+                @foreach (var r in Model.Items)
+                {
+                    <option value="@r.Identifier" label="@r.Title"></option>
+                    <option value="@r.Title" label="@r.Identifier"></option>
+                }
+            </datalist>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">Created from</label>
+            <input type="date" class="form-control" name="StartDate" value="@(Model.StartDate?.ToString("yyyy-MM-dd"))" />
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">Created to</label>
+            <input type="date" class="form-control" name="EndDate" value="@(Model.EndDate?.ToString("yyyy-MM-dd"))" />
+        </div>
+    </div>
+</form>
+
+@if (Model.TrackedRequest != null)
+{
+    var r = Model.TrackedRequest;
+    <div class="card mb-3 shadow-sm">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-start">
+                <h5 class="card-title mb-0">@r.Title <small class="text-muted">(@r.Identifier)</small></h5>
+                <span class="chip">@((r.Status == IssuesReportingApp.Models.ServiceRequestStatus.InProgress) ? "In Progress" : r.Status.ToString())</span>
+            </div>
+            <p class="card-text">@r.Description</p>
+            <div class="mb-2">
+                <span class="chip">@r.Category</span>
+                <span class="chip warn">Priority @r.Priority</span>
+            </div>
+            @if (Model.DependencyPath?.Any() == true)
+            {
+                <div>
+                    <strong>Dependencies:</strong>
+                    <div class="d-flex flex-wrap gap-2 mt-1">
+                        @foreach (var step in Model.DependencyPath)
+                        {
+                            <span class="chip">@step</span>
+                        }
+                    </div>
+                </div>
+            }
+            @if (Model.DependencyBackbone != null && Model.DependencyBackbone.Count > 0)
+            {
+                <div class="mt-3">
+                    <strong>Minimal dependency backbone (MST):</strong>
+                    <div class="d-flex flex-column gap-1 mt-1">
+                        @foreach (var edge in Model.DependencyBackbone)
+                        {
+                            <span class="chip">@edge.u → @edge.v</span>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+
+<h3 class="mb-2">All Requests</h3>
+<div class="row g-3">
+    <div class="col-12">
+        <table class="table table-striped table-hover align-middle table-modern">
+            <thead>
+                <tr>
+                    <th>Identifier</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Updated</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var r in Model.Items)
+            {
+                <tr>
+                    <td class="fw-semibold">@r.Identifier</td>
+                    <td>@r.Title</td>
+                    <td><span class="chip">@((r.Status == IssuesReportingApp.Models.ServiceRequestStatus.InProgress) ? "In Progress" : r.Status.ToString())</span></td>
+                    <td><span class="chip warn">@r.Priority</span></td>
+                    <td>@(r.UpdatedDate?.ToLocalTime().ToString("g") ?? r.CreatedDate.ToLocalTime().ToString("g"))</td>
+                    <td>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary btn-sm" asp-page="/ServiceRequests/Index" asp-route-IdentifierQuery="@r.Identifier">Track</a>
+                            <button type="button" class="btn btn-outline-secondary btn-sm copy-id" data-copy-id="@r.Identifier">Copy ID</button>
+                        </div>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-12">
+        <h4 class="mb-2">Next to Process</h4>
+        <div class="d-flex flex-wrap gap-2">
+            @foreach (var r in Model.NextUp)
+            {
+                <span class="chip">@r.Identifier (@r.Priority)</span>
+            }
+        </div>
+    </div>
+    <div class="col-12">
+        <h4 class="mb-2">Alphabetical by Title</h4>
+        <div class="d-flex flex-wrap gap-2">
+            @foreach (var r in Model.Alphabetical)
+            {
+                <span class="chip">@r.Title <small class="text-muted">(@r.Identifier)</small></span>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+  (function(){
+    document.querySelectorAll('.copy-id').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var id = btn.getAttribute('data-copy-id');
+        if (!id) return;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(id).then(function(){
+            var prev = btn.textContent;
+            btn.textContent = 'Copied';
+            setTimeout(function(){ btn.textContent = prev; }, 1200);
+          }).catch(function(){ alert('Copy failed'); });
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = id; document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); } catch(e) {}
+          document.body.removeChild(ta);
+          var prev = btn.textContent;
+          btn.textContent = 'Copied';
+          setTimeout(function(){ btn.textContent = prev; }, 1200);
+        }
+      });
+    });
+  })();
+</script>

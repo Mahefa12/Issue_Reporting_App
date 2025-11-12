@@ -1,0 +1,53 @@
+@page
+@model IssuesReportingWeb.Pages.Admin.IdeasModel
+@{
+    ViewData["Title"] = "Manage Ideas";
+}
+
+<div class="container mt-4">
+    <div class="page-header d-flex align-items-center justify-content-between">
+        <h2>Submitted Ideas</h2>
+        <a class="btn btn-outline-secondary" asp-page="/Admin/Index">Back to Dashboard</a>
+    </div>
+
+    <div class="mb-2 d-flex flex-wrap gap-2">
+        <span class="chip warn">Submitted @Model.SubmittedCount</span>
+        <span class="chip ok">Accepted @Model.AcceptedCount</span>
+        <span class="chip danger">Rejected @Model.RejectedCount</span>
+    </div>
+
+    <table class="table-modern">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Category</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model.Ideas)
+            {
+                <tr>
+                    <td>@i.Id</td>
+                    <td>@i.Title</td>
+                    <td>@i.Category</td>
+                    <td>
+                        <span class="chip @(i.Status == "Accepted" ? "ok" : "warn")">@i.Status</span>
+                    </td>
+                    <td class="d-flex gap-2">
+                        <form method="post" asp-page-handler="AcceptIdea">
+                            <input type="hidden" name="id" value="@i.Id" />
+                            <button type="submit" class="btn btn-sm btn-success">Accept</button>
+                        </form>
+                        <form method="post" asp-page-handler="RejectIdea">
+                            <input type="hidden" name="id" value="@i.Id" />
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Reject</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

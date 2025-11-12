@@ -1,0 +1,14 @@
+@{
+    ViewData["Title"] = "Logout";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h2>Sign out</h2>
+        <a class="btn btn-secondary" asp-controller="Admin" asp-action="Index">Back to Dashboard</a>
+    </div>
+
+    <form method="post" asp-controller="Admin" asp-action="LogoutPost">
+        <button type="submit" class="btn btn-danger">Confirm Logout</button>
+    </form>
+</div>
