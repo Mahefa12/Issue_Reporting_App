@@ -1,4 +1,6 @@
 # Issues Reporting App
+## Demo Video
+- Watch the project demo: https://youtu.be/VHEDLQg4TLU
 ## Prerequisites
 - `.NET SDK 9.0` or later (`dotnet --version` should be `9.x`).
 - macOS, Linux, or Windows for the web app.
